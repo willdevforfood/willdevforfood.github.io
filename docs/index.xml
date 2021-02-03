@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>WillDevForFood</title>
+        <link>https://willdevforfood.github.io/</link>
+        <description>WillDevForFood</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 28 Jan 2021 21:36:57 &#43;0700</lastBuildDate>
+            <atom:link href="https://willdevforfood.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>Hello World</title>
+    <link>https://willdevforfood.github.io/posts/hello_world/</link>
+    <pubDate>Thu, 28 Jan 2021 21:36:57 &#43;0700</pubDate>
+    <author>Author</author>
+    <guid>https://willdevforfood.github.io/posts/hello_world/</guid>
+    <description><![CDATA[Hello World ]]></description>
+</item></channel>
+</rss>
