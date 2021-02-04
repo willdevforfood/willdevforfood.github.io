@@ -1,7 +1,10 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Categories - Category - WillDevForFood</title>
-        <link>https://willdevforfood.github.io/categories/</link>
-        <description>Categories - Category - WillDevForFood</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="https://willdevforfood.github.io/categories/" rel="self" type="application/rss+xml" /></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on WillDevForFood</title>
+    <link>https://willdevforfood.github.io/categories/</link>
+    <description>Recent content in Categories on WillDevForFood</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://willdevforfood.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
 </rss>

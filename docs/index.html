@@ -10,8 +10,8 @@
 
 
 
-<meta name="author" content="" />
-<meta name="description" content="An accessibility-friendly Hugo theme, ported from the [original Cupper](https://github.com/ThePacielloGroup/cupper) project." />
+<meta name="author" content="WillDevForFood" />
+<meta name="description" content="" />
 
 
 
@@ -21,16 +21,16 @@
 
 
 <meta property="og:title" content="WillDevForFood" />
-<meta property="og:description" content="An accessibility-friendly Hugo theme, ported from the [original Cupper](https://github.com/ThePacielloGroup/cupper) project." />
+<meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://willdevforfood.github.io/" />
-<meta property="og:updated_time" content="2021-02-03T23:42:33+07:00" />
+<meta property="og:updated_time" content="2021-01-28T21:36:57+07:00" />
 
 
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="WillDevForFood"/>
-<meta name="twitter:description" content="An accessibility-friendly Hugo theme, ported from the [original Cupper](https://github.com/ThePacielloGroup/cupper) project."/>
+<meta name="twitter:description" content=""/>
 
 
 <link rel="stylesheet" href="/css/semantic.min.css" />
@@ -71,6 +71,10 @@
   </div>
   
   
+  <div class="item">
+    <i class="large link search icon" onclick="toggleSearch()"></i>
+  </div>
+  
 </nav>
 
     <div class="flip-container">
@@ -85,7 +89,7 @@
   </div>
 
   <div class="content">
-    <h1 class="ui medium header">&#39;s blog<div class="sub header"></div>
+    <h1 class="ui medium header">WillDevForFood<div class="sub header"></div>
     </h1>
 
     <article class="ui horizontal list">
@@ -132,7 +136,7 @@
   </div>
 
   <div class="extra content">
-    <div class="author">@&nbsp;</div>
+    <div class="author">@&nbsp;WillDevForFood</div>
     <div class="reading-time">
       <i class="clock icon"></i>1 minute read</div>
   </div>
@@ -152,7 +156,7 @@
 
             <footer class="ui basic center aligned segment" style="background-color: transparent;">
               
-              <p>© 2021 WillDevForFood</p>
+              <p>© 2016 - 2021 WillDevForFood</p>
               
 
               <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
@@ -169,7 +173,7 @@
   </div>
 
   <div class="content">
-    <h1 class="ui medium header">&#39;s blog<div class="sub header"></div>
+    <h1 class="ui medium header">WillDevForFood<div class="sub header"></div>
     </h1>
 
     <article class="ui horizontal list">
@@ -214,6 +218,12 @@
 
   
 
+  
+  <div class="item">
+    <a href="https://github.com/willdevforfood" target="_blank">
+      <i class="large github icon" title="GitHub"></i>
+    </a>
+  </div>
   
 
   
@@ -278,6 +288,28 @@
 <script src="/js/masonry.pkgd.min.js"></script>
 <script src="/js/grid.js"></script>
 
+
+    
+    <div class="ui inverted segment" id="dream-search">
+  <div class="ui search">
+    <div class="ui transparent input">
+      <input class="prompt" type="text" placeholder="Search" />
+    </div>
+    <div class="results"></div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $.getJSON('https:\/\/willdevforfood.github.io/index.json', function (data) {
+      $('.ui.search').search({
+        source: data,
+        searchFields: ['title'],
+        showNoResults: true,
+      })
+    })
+  })
+</script>
+<script src="/js/search.js"></script>
 
     
 

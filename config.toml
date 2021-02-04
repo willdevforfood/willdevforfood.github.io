@@ -1,0 +1,18 @@
+baseURL = "https://willdevforfood.github.io"
+defaultContentLanguage = "en"
+languageCode = "en-us"
+title = "WillDevForFood"
+theme = "dream"
+publishDir = "docs"
+
+[params]
+  enableSearch = true
+  author = "WillDevForFood"
+  headerTitle = "WillDevForFood"
+
+  github = "willdevforfood"
+
+  siteStartYear = 2016
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
