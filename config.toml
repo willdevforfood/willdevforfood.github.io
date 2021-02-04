@@ -9,6 +9,7 @@ publishDir = "docs"
   enableSearch = true
   author = "WillDevForFood"
   headerTitle = "WillDevForFood"
+  avatar = "/me/logo.png"
 
   github = "willdevforfood"
 
