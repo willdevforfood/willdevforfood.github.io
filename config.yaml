@@ -3,7 +3,7 @@ baseURL: "https://willdevforfood.github.io"
 defaultContentLanguage: "en"
 languageCode: "en-us"
 title: "WillDevForFood"
-theme: "cupper-hugo-theme"
+theme: "dream"
 publishDir: "docs"
 enableGitInfo: true
 
