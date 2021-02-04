@@ -10,6 +10,7 @@ publishDir = "docs"
   author = "WillDevForFood"
   headerTitle = "WillDevForFood"
   avatar = "/me/logo.png"
+  favicon = "/logo.ico"
 
   github = "willdevforfood"
 
