@@ -1,7 +1,7 @@
 
 
 # How To Solve LeetCode #4 [Hard] - Median Of Two Sorted Arrays ?
-![" Median Of Two Sorted Arrays"](median.jpg "Median Of Two Sorted Arrays")
+![" Median Of Two Sorted Arrays"](/assets/median.jpg "Median Of Two Sorted Arrays")
 <i>Feb 05, 2021</i>
 <b>Author : Vudang</b>
 
@@ -283,7 +283,7 @@ public class Solution {
 ```
 
 ## Runtime : Faster than 99.97% JS Submissions
-![" Median Of Two Sorted Arrays"](runtime.png "Median Of Two Sorted Arrays")
+![" Median Of Two Sorted Arrays"](/assets/runtime.png "Median Of Two Sorted Arrays")
 
 
 ## Kết luận
