@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on WillDevForFood</title>
-    <link>https://willdevforfood.github.io/posts/</link>
-    <description>Recent content in Posts on WillDevForFood</description>
+    <title>Algo on WillDevForFood</title>
+    <link>https://willdevforfood.github.io/tags/algo/</link>
+    <description>Recent content in Algo on WillDevForFood</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://willdevforfood.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://willdevforfood.github.io/tags/algo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Median Of Two Sorted Arrays</title>
       <link>https://willdevforfood.github.io/posts/median-of-two-sorted-arrays/</link>

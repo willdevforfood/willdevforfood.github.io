@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Median Of Two Sorted Arrays | WillDevForFood</title>
+
+    
+<link href="/logo.ico" rel="shortcut icon" type="image/x-icon" />
+
+
+
+
+<meta name="author" content="Vu Dang" />
+<meta name="description" content="Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+Cho 2 mảng đã được sắp xếp lần lượt là nums1 (kích thước m) và nums2 (kích thước n).Trả về kết quả là trung vị của 2 mảng đã được sắp xếp
+" />
+
+
+
+<meta name="generator" content="Hugo 0.80.0" />
+
+<link rel="canonical" href="https://willdevforfood.github.io/posts/median-of-two-sorted-arrays/" />
+
+
+<meta property="og:title" content="Median Of Two Sorted Arrays" />
+<meta property="og:description" content="Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+Cho 2 mảng đã được sắp xếp lần lượt là nums1 (kích thước m) và nums2 (kích thước n).Trả về kết quả là trung vị của 2 mảng đã được sắp xếp" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://willdevforfood.github.io/posts/median-of-two-sorted-arrays/" />
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Median Of Two Sorted Arrays"/>
+<meta name="twitter:description" content="Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
+Cho 2 mảng đã được sắp xếp lần lượt là nums1 (kích thước m) và nums2 (kích thước n).Trả về kết quả là trung vị của 2 mảng đã được sắp xếp"/>
+
+
+<link rel="stylesheet" href="/css/semantic.min.css" />
+<link rel="stylesheet" href="/css/icomoon.css" />
+<link rel="stylesheet" href="/css/OverlayScrollbars.min.css" />
+<link rel="stylesheet" href="/css/github-markdown.css" />
+<link rel="stylesheet" href="/css/site.css" />
+
+<style>
+  a:not(.ui.button):hover {
+    text-decoration: underline;
+  }
+
+  
+
+  
+
+  
+
+  
+</style>
+
+
+    
+
+
+
+
+
+
+
+    
+  </head>
+
+  <body class="default">
+    
+<nav class="ui secondary menu dream-menu">
+
+  <div class="item">
+    <i class="large link bullseye icon dream-flip-toggle" title="Flip it!"></i>
+  </div>
+  <div class="item">
+    <i class="large link home icon" title="Home" onclick="window.location.href = 'https:\/\/willdevforfood.github.io'"></i>
+  </div>
+  
+  
+  <div class="item">
+    <i class="large link search icon" onclick="toggleSearch()"></i>
+  </div>
+  
+</nav>
+
+    <div class="flip-container">
+      <div class="flipper">
+        <section class="front">
+          <div class="dream-max-width">
+            
+<div class="ui relaxed grid dream-grid">
+  <aside class="sixteen wide mobile sixteen wide tablet four wide computer column dream-single-aside">
+    
+    
+    <div class="ui segment toc">
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ví-dụ">Ví dụ</a></li>
+    <li><a href="#phân-tích-bài-toán">Phân tích bài toán</a></li>
+    <li><a href="#hướng-tiếp-cận">Hướng tiếp cận</a></li>
+    <li><a href="#code">Code</a>
+      <ul>
+        <li><a href="#javascript">Javascript</a></li>
+        <li><a href="#c">C++</a></li>
+        <li><a href="#c-1">C#</a></li>
+      </ul>
+    </li>
+    <li><a href="#runtime--faster-than-9997-js-submissions">Runtime : Faster than 99.97% JS Submissions</a></li>
+    <li><a href="#kết-luận">Kết luận</a></li>
+  </ul>
+</nav>
+    </div>
+    
+    <div class="ui segment actions">
+      <button
+        class="ui circular icon button save-as-image"
+        title="Save as image"
+        onclick="savePostAsImg()">
+        <i class="save icon"></i>
+      </button>
+
+      <a href="https://twitter.com/intent/tweet?text=Median%20Of%20Two%20Sorted%20Arrays&url=https%3a%2f%2fwilldevforfood.github.io%2fposts%2fmedian-of-two-sorted-arrays%2f" class="ui circular twitter icon button">
+  <i class="twitter icon"></i>
+</a>
+<a href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2fwilldevforfood.github.io%2fposts%2fmedian-of-two-sorted-arrays%2f" class="ui circular facebook icon button">
+  <i class="facebook icon"></i>
+</a>
+
+    </div>
+  </aside>
+  <div class="sixteen wide mobile sixteen wide tablet twelve wide computer column markdown-body dream-single" id="dream-save-post-as-img">
+    
+    <section class="ui top attached segment">
+      <header>
+        <h1 class="ui large header">Median Of Two Sorted Arrays<div class="sub header">
+            @
+            
+              
+                <a href="https://github.com/giavudangle" target="_blank">Vu Dang</a>
+              
+            
+
+            | 
+                Monday, Jan 1, 0001
+              
+
+            | 10 minutes read
+
+            | Update at
+              
+                Monday, Jan 1, 0001
+              
+          </div>
+        </h1>
+      </header>
+
+      <article class="main"><p>Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.</p>
+<p>Cho 2 mảng đã được sắp xếp lần lượt là nums1 (kích thước m) và nums2 (kích thước n).Trả về kết quả là trung vị của 2 mảng đã được sắp xếp</p>
+<p><img src="/assets/median.jpg" alt="" Median Of Two Sorted Arrays"" title="Median Of Two Sorted Arrays"></p>
+<p><strong>Điều kiện :</strong>
+Độ phức tạp toàn bộ quá trình runtime phải là phải là <strong>O(log (m+n)).</strong> (Khó ở phần optimize được <strong>O(log (m+n))</strong> như đề yêu cầu ).</p>
+<p><strong>Ràng buộc của bài toán :</strong></p>
+<ul>
+<li>nums1.length == m</li>
+<li>nums2.length == n</li>
+<li>0 &lt;= m &lt;= 1000</li>
+<li>0 &lt;= n &lt;= 1000</li>
+<li>1 &lt;= m + n &lt;= 2000</li>
+<li>-10<!-- raw HTML omitted -->6<!-- raw HTML omitted --> &lt;= nums1[i], nums2[i] &lt;= 10<!-- raw HTML omitted -->6<!-- raw HTML omitted --></li>
+</ul>
+<h2 id="ví-dụ">Ví dụ</h2>
+<p>Ví dụ 1 :</p>
+<pre><code>Input: nums1 = [1,3], nums2 = [2]
+Output: 2.00000
+Explanation: merged array = [1,2,3] and median is 2.
+</code></pre><p>Ví dụ 2 :</p>
+<pre><code>Input: nums1 = [1,2], nums2 = [3,4]
+Output: 2.50000
+Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
+</code></pre><h2 id="phân-tích-bài-toán">Phân tích bài toán</h2>
+<p>Mới nhìn vào ,đọc lướt qua đề bài ta thấy vấn đề vô cùng dơn giản :v . Ta sẽ nghĩ kiểu : Merge 2 mảng lại thì độ dài của mảng sau khi merge là <code>m + n</code> .</p>
+<p>Ok thôi, như vậy sẽ có hai trường hợp để tính toán trung vị (median).Tạm gọi kết quả sau khi merge 2 mảng lại là <code>res</code>
+Vậy thì ta sẽ tính được :</p>
+<ul>
+<li>TH1 : Nếu như (m + n) là số lẻ, thì median của chúng ta là <code>res[(m + n + 1) / 2]</code>.(Lẻ thì chỉ cần lấy chính xác tại vị trí này)</li>
+<li>TH2 : Nếu như (m + n) là số chẵn, thì median của chúng ta là <code>(result[(m + n) / 2] + result[(m + n) / 2 + 1]) / 2</code>.(Nhưng với chẵn ta phải lấy cả 2 vị trí sau đó lấy trung bình cộng)</li>
+</ul>
+<p>Mảng đã được sắp xếp, nên chúng ta không cần quan tâm về vấn đề đã sort hay chưa.Vậy đơn giản chúng ta chỉ cần MERGE 2 mảng lại <!-- raw HTML omitted -->Merge Sort<!-- raw HTML omitted --> xong tính median như cách trên là xong rồi =))).</p>
+<p>😹 Ề ế ê :v ? Nếu như vấn đề đơn giản vậy thì tại sao nó lại được đánh là tag <!-- raw HTML omitted --><!-- raw HTML omitted -->HARD<!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>🤔 Đôi lúc chúng ta hay ngáo bài chỗ đó =))) . OK. Quay lại đọc kĩ Time Complexity nào.
+=&gt; <strong>O(log (m+n)).</strong>
+Ta phải giải nó sao cho chỉ cắn trong phạm vi <strong>O(log (m+n))</strong> thôi =)))).Vấn đề ở đây đó.Nếu dùng hàm merge thì độ phức tạp (time complexity) đã là <strong>O(m+n)</strong> rồi.
+=&gt; Còn gì nữa đâu mà khóc với sầu khi suy nghĩ theo hướng merge 2 thằng lại =))). (Bỏ đi nha)</p>
+<h2 id="hướng-tiếp-cận">Hướng tiếp cận</h2>
+<p>Đầu tiên phải đọc kĩ đề đã,đọc nhiều lần lên mới thông não được. Và leetcode cũng có phần <code>hint</code> để mình mò đó =)))</p>
+<p>Cùng nhìn xíu nào 😤 .</p>
+<ul>
+<li>Mảng đã được sắp xếp</li>
+<li>Độ phức tạp runtime <strong>O(log (m+n))</strong></li>
+</ul>
+<p>Sau một hồi suy diễn thì chắc chắn phải dùng 😜 Binary Search (Tìm kiếm nhị phân rồi ) =)))</p>
+<p>Nảy sinh tiếp một vấn đề.Áp dụng Binary Search vào trường hợp này như thế nào đây ? Vấn đề hiện tại của chúng ta, là tìm vị trí của cả 2 mảng mà <code>phần tử bên trái</code> <code>&lt;=</code> <code>phần tử bên phải</code> . Và điều này phải đúng với mảng đã được merge.</p>
+<p>Nếu chưa hiểu thì cũng không sao :v . Đọc lại đề và ví dụ lần nữa nào, khi ta giải theo ví dụ ta sẽ hiểu được vấn đề thôi :D . Okay cùng xem ví dụ bên dưới nhé.
+<strong>Ví dụ</strong></p>
+<pre><code>    A = [3, 5, 16, 17, 19, 24] =&gt; m = 6
+    B = [4, 6, 8, 10, 13, 17, 20] =&gt; n = 7
+    Khi ta merge lại được mảng Merged
+    Merged = [3, 4, 5, 6, 8, 10, 13, 16, 17, 17, 19, 20, 24] =&gt; m + n  = 6 + 7 = 13
+    Do đó, trung vị của ta sẽ là (i(13) + i(1))/2 = i(7) có giá trị là 13.
+    (Với i là chỉ số của mảng)
+</code></pre><p>Điều này chỉ thực hiện được khi ta chia 2 mảng A(i(2)) và B(i(3)) như sau :</p>
+<table>
+<thead>
+<tr>
+<th>Trái</th>
+<th>Phải</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A = 3, 5, 16</td>
+<td>A =  17, 19, 24</td>
+</tr>
+<tr>
+<td>B = 4, 6, 8, 10</td>
+<td>B =  13, 17, 20</td>
+</tr>
+</tbody>
+</table>
+<p>Như vậy ta sẽ áp dụng tìm kiếm nhị phân để tìm các chỉ số này,
+nếu như ta chia mảng và tìm được ngay được trung vị.
+Vậy ta phải làm sao ? Các bước như sau :</p>
+<hr>
+<ol>
+<li>Kiểm tra xem mảng nào có độ dài là nhỏ nhất trong 2 mảng.Ta sẽ áp dụng Binary Search trên mảng nhỏ hơn.</li>
+<li><!-- raw HTML omitted -->Binary Search<!-- raw HTML omitted --> của chúng ta sẽ có 2 pointers. Là <code>start = 0</code> và <code>end = m</code> (với m lầ độ dài của mảng nhỏ nhất trong 2 mảng).</li>
+<li>Ta loop khi nào <code>left &lt;= right</code> hay <code>start &lt;= end</code> vẫn làm.</li>
+<li>Tiến hành tính chỉ số mid của A (partA) là điểm ở giữa của nó :
+<code>(start + end) / 2</code></li>
+<li>Tiến hành tính chỉ số mid của B (parB) là điểm ở giữa của nó :
+<code>(m + n + 1) / 2 - partitionA</code></li>
+<li>Tính maxLeftA,minRightA,maxLeftB,minRightB
+<ul>
+<li>maxLeftA : phần tử lớn nhất bên trái của A</li>
+<li>minRightA : phần tử nhỏ nhất bên phải của A</li>
+<li>maxLeftB : phần tử lớn nhất bên trái của B</li>
+<li>minRightB : phần tử nhỏ nhất bên phải của B</li>
+</ul>
+</li>
+<li>Okay giờ ta sẽ rơi vào 3 trường hợp như sau :
+<ul>
+<li>If (maxLeftA &lt;= minRightB &amp;&amp; maxLeftB &lt;= minRightA)
+=&gt; Ta đã tìm đúng vị trí của median. Ta trả về median dựa vào <code>m + n</code> là chẵn hay lẻ như phân tích trên .</li>
+<li>Else If (maxLeftA &gt; minRightB)
+=&gt; Vị trí median của ta đang ở xa phía bên phải và ta cần thu hẹp khoảng cách tìm kiếm cho nó gần về phía trái, do đó <code>end = partA - 1</code></li>
+<li>Else
+=&gt;  Vị trí median của ta đang ở xa phía bên trái và ta cần thu hẹp khoảng cách tìm kiếm cho nó gần về phía phải, do đó <code>end = partA + 1</code></li>
+</ul>
+</li>
+</ol>
+<p><strong>=&gt; Đó chính là cách chúng ta áp dụng Binary Search để giải bài Median này ^^.</strong></p>
+<h2 id="code">Code</h2>
+<h3 id="javascript">Javascript</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">findMedianSortedArrays</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">nums1</span>, <span style="color:#a6e22e">nums2</span>) {
+    <span style="color:#75715e">// Kiểm tra nums1.length có lớn hơn nums2.length không ?
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Nếu lớn hơn thì ta đệ quy lại hàm mới đồng thời thay đổi tham số :D
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">nums1</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">nums2</span>.<span style="color:#a6e22e">length</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">findMedianSortedArrays</span>(<span style="color:#a6e22e">nums2</span>, <span style="color:#a6e22e">nums1</span>);
+    }
+
+    <span style="color:#75715e">// Lấy length tiện cho việc tính toán
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nums1</span>.<span style="color:#a6e22e">length</span>;
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nums2</span>.<span style="color:#a6e22e">length</span>;
+    <span style="color:#75715e">// 2 con trỏ start và end.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">start</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">end</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">m</span>;
+
+    <span style="color:#75715e">// Tiến hành BS
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">start</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">end</span>) {
+        <span style="color:#75715e">// Chia mảng thành 2 part
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">partA</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>((<span style="color:#a6e22e">start</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">end</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>);
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">partB</span> <span style="color:#f92672">=</span> Math.<span style="color:#a6e22e">floor</span>((<span style="color:#a6e22e">m</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">-</span> <span style="color:#a6e22e">partA</span>;
+
+        <span style="color:#75715e">// Tiến hành validate một số case
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">maxLeftA</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">partA</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> Number.<span style="color:#a6e22e">MIN_SAFE_INTEGER</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">nums1</span>[<span style="color:#a6e22e">partA</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">minRightA</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">partA</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">m</span> <span style="color:#f92672">?</span> Number.<span style="color:#a6e22e">MAX_SAFE_INTEGER</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">nums1</span>[<span style="color:#a6e22e">partA</span>];
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">maxLeftB</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">partB</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> Number.<span style="color:#a6e22e">MIN_SAFE_INTEGER</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">nums2</span>[<span style="color:#a6e22e">partB</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">minRightB</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">partB</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">?</span> Number.<span style="color:#a6e22e">MAX_SAFE_INTEGER</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">nums2</span>[<span style="color:#a6e22e">partB</span>];
+
+        <span style="color:#75715e">// 3 trường hợp đã đề cập ở trong bài
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">maxLeftA</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">minRightB</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">maxLeftB</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">minRightA</span>) {
+            <span style="color:#75715e">// Kiểm tra chẵn lẻ độ dài tổng để tính median
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> ((<span style="color:#a6e22e">m</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">n</span>) <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+                <span style="color:#66d9ef">return</span> (Math.<span style="color:#a6e22e">max</span>(<span style="color:#a6e22e">maxLeftA</span>, <span style="color:#a6e22e">maxLeftB</span>) <span style="color:#f92672">+</span> Math.<span style="color:#a6e22e">min</span>(<span style="color:#a6e22e">minRightA</span>, <span style="color:#a6e22e">minRightB</span>)) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2.0</span>;
+            } <span style="color:#66d9ef">else</span> {
+                <span style="color:#66d9ef">return</span> Math.<span style="color:#a6e22e">max</span>(<span style="color:#a6e22e">maxLeftA</span>, <span style="color:#a6e22e">maxLeftB</span>);
+            }
+        }
+        <span style="color:#75715e">// Nằm về phải quá thì thu hẹp khoảng cách về trái
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">maxLeftA</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">minRightB</span>) {
+            <span style="color:#a6e22e">end</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">partA</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+        }
+        <span style="color:#75715e">// Nằm về trái quá thì thu hẹp khoảng cách về phải
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">else</span> {
+            <span style="color:#a6e22e">start</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">partA</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+        }
+    }
+};
+</code></pre></div><h3 id="c">C++</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">double</span> findMedianSortedArrays(std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> A, std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;&amp;</span> B) {
+
+    <span style="color:#75715e">// Lấy length tiện cho việc tính toán
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> m <span style="color:#f92672">=</span> A.size();
+    <span style="color:#66d9ef">int</span> n <span style="color:#f92672">=</span> B.size();
+
+    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> INF <span style="color:#f92672">=</span> (<span style="color:#66d9ef">int</span>)<span style="color:#ae81ff">1e9</span>;
+
+    <span style="color:#75715e">// Kiểm tra nums1.length có lớn hơn nums2.length không ?
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (m <span style="color:#f92672">&gt;</span> n) {
+        <span style="color:#66d9ef">int</span> temp <span style="color:#f92672">=</span> m;
+        m <span style="color:#f92672">=</span> n;
+        n <span style="color:#f92672">=</span> temp;
+
+        std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span><span style="color:#f92672">&gt;</span> tempNums <span style="color:#f92672">=</span> A;
+        A <span style="color:#f92672">=</span> B;
+        B <span style="color:#f92672">=</span> tempNums;
+    }
+
+    <span style="color:#75715e">// 2 con trỏ start và end.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> start <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#66d9ef">int</span> end <span style="color:#f92672">=</span> m;
+
+    <span style="color:#75715e">// Tiến hành BS
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">while</span> (start <span style="color:#f92672">&lt;=</span> end) {
+        <span style="color:#66d9ef">int</span> partA <span style="color:#f92672">=</span> (start <span style="color:#f92672">+</span> end) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+        <span style="color:#66d9ef">int</span> partB <span style="color:#f92672">=</span> ((m <span style="color:#f92672">+</span> n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>) <span style="color:#f92672">-</span> partA;
+
+
+        <span style="color:#66d9ef">int</span> maxLeftA <span style="color:#f92672">=</span> partA <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#f92672">-</span>INF : A[partA <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+        <span style="color:#66d9ef">int</span> minRightA <span style="color:#f92672">=</span> partA <span style="color:#f92672">==</span> m <span style="color:#f92672">?</span> INF : A[partA];
+        <span style="color:#66d9ef">int</span> maxLeftB <span style="color:#f92672">=</span> partB <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#f92672">-</span>INF : B[partB <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+        <span style="color:#66d9ef">int</span> minRightB <span style="color:#f92672">=</span> partB <span style="color:#f92672">==</span> n <span style="color:#f92672">?</span> INF : B[partB];
+
+       <span style="color:#75715e">// 3 trường hợp đã đề cập ở trong bài
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (maxLeftA <span style="color:#f92672">&lt;=</span> minRightB <span style="color:#f92672">&amp;&amp;</span> maxLeftB <span style="color:#f92672">&lt;=</span> minRightA) {
+            <span style="color:#75715e">// Kiểm tra chẵn lẻ độ dài tổng để tính median
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> ((m <span style="color:#f92672">+</span> n) <span style="color:#f92672">%</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+                <span style="color:#66d9ef">return</span> (max(maxLeftA, maxLeftB) <span style="color:#f92672">+</span> min(minRightA, minRightB)) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2.0</span>;
+            } <span style="color:#66d9ef">else</span> {
+                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>(maxLeftA, maxLeftB);
+            }
+        }
+        <span style="color:#75715e">// Nằm về phải quá thì thu hẹp khoảng cách về trái
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">if</span> (maxLeftA <span style="color:#f92672">&gt;</span> minRightB) {
+            end <span style="color:#f92672">=</span> partA <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+        }
+        <span style="color:#75715e">// Nằm về trái quá thì thu hẹp khoảng cách về phải
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">else</span> {
+            start <span style="color:#f92672">=</span> partA <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+        }
+    }
+
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0.0</span>;
+    }
+};
+</code></pre></div><h3 id="c-1">C#</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Solution</span> {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> FindMedianSortedArrays(<span style="color:#66d9ef">int</span>[] nums1, <span style="color:#66d9ef">int</span>[] nums2) {
+         <span style="color:#75715e">// Kiểm tra nums1.length có lớn hơn nums2.length không ?
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// Nếu lớn hơn thì ta đệ quy lại hàm mới đồng thời thay đổi tham số :D
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (nums1.Length &gt; nums2.Length) {
+            <span style="color:#66d9ef">return</span> FindMedianSortedArrays(nums2, nums1);
+        }
+
+        <span style="color:#75715e">// Lấy length tiện cho việc tính toán
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> m = nums1.Length;
+        <span style="color:#66d9ef">int</span> n = nums2.Length;
+
+        <span style="color:#75715e">// 2 con trỏ start và end.
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> start = <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">int</span> end = m;
+
+        <span style="color:#75715e">// Tiến hành BS
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">while</span> (start &lt;= end) {
+            <span style="color:#75715e">// Chia mảng thành 2 part
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">int</span> partA = (start + end) / <span style="color:#ae81ff">2</span>;
+            <span style="color:#66d9ef">int</span> partB = ((m + n + <span style="color:#ae81ff">1</span>) / <span style="color:#ae81ff">2</span>) - partA;
+
+            <span style="color:#75715e">// Tiến hành validate một số case
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">int</span> maxLeftA = partA == <span style="color:#ae81ff">0</span> ? Int32.MinValue : nums1[partA - <span style="color:#ae81ff">1</span>];
+            <span style="color:#66d9ef">int</span> minRightA = partA == m ? Int32.MaxValue : nums1[partA];
+            <span style="color:#66d9ef">int</span> maxLeftB = partB == <span style="color:#ae81ff">0</span> ? Int32.MinValue : nums2[partB - <span style="color:#ae81ff">1</span>];
+            <span style="color:#66d9ef">int</span> minRightB = partB == n ? Int32.MaxValue : nums2[partB];
+
+            <span style="color:#75715e">// 3 trường hợp đã đề cập ở trong bài
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (maxLeftA &lt;= minRightB &amp;&amp; maxLeftB &lt;= minRightA) {
+                <span style="color:#75715e">// Kiểm tra chẵn lẻ độ dài tổng để tính median
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">if</span> ((m + n) % <span style="color:#ae81ff">2</span> == <span style="color:#ae81ff">0</span>) {
+                    <span style="color:#66d9ef">return</span> (Math.Max(maxLeftA, maxLeftB) + Math.Min(minRightA, minRightB)) / <span style="color:#ae81ff">2.0</span>;
+                } <span style="color:#66d9ef">else</span> {
+                    <span style="color:#66d9ef">return</span> Math.Max(maxLeftA, maxLeftB);
+                }
+            }
+            <span style="color:#75715e">// Nằm về phải quá thì thu hẹp khoảng cách về trái
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (maxLeftA &gt; minRightB) {
+                end = partA - <span style="color:#ae81ff">1</span>;
+            }
+            <span style="color:#75715e">// Nằm về trái quá thì thu hẹp khoảng cách về phải
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">else</span> {
+                start = partA + <span style="color:#ae81ff">1</span>;
+            }
+        }
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0.0</span>;
+    }
+}
+</code></pre></div><h2 id="runtime--faster-than-9997-js-submissions">Runtime : Faster than 99.97% JS Submissions</h2>
+<p><img src="/assets/runtime.png" alt="" Median Of Two Sorted Arrays"" title="Median Of Two Sorted Arrays"></p>
+<h2 id="kết-luận">Kết luận</h2>
+<p>Otoke :v Vậy là chúng ta đã giải được một bài tag <!-- raw HTML omitted --><!-- raw HTML omitted -->HARD<!-- raw HTML omitted --><!-- raw HTML omitted -->.
+Qua bài này, chúng ta đã hình dung cách tiếp cận bài toán cũng như áp dụng Binary Search để tìm Median.
+Nếu bạn thấy bài viết có ít,đừng ngần ngại chia sẽ blog của tụi mình nhé.
+Cảm ơn đã đọc bài của mình . 😄
+Happy coding &lt;3</p></article>
+    </section>
+
+    
+
+    
+
+    
+  </div>
+</div>
+
+
+            <footer class="ui basic center aligned segment" style="background-color: transparent;">
+              
+              <p>© 2016 - 2021 WillDevForFood</p>
+              
+
+              <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
+
+              
+            </footer>
+          </div>
+        </section>
+        <section class="back">
+          <div class="dream-max-width">
+            <header class="ui basic very padded segment dream-header">
+  <div class="ui small circular image">
+    
+    <img src="/me/logo.png" />
+    
+  </div>
+
+  <div class="content">
+    <h1 class="ui medium header">WillDevForFood<div class="sub header"></div>
+    </h1>
+
+    <article class="ui horizontal list">
+      
+      <a class="item" href="/posts">
+        <i class="archive icon" title="Archives"></i>
+      </a>
+      
+      <a class="item" href="/categories">
+        <i class="th list icon" title="All Categories"></i>
+      </a>
+      <a class="item" href="/tags">
+        <i class="tags icon" title="All Tags"></i>
+      </a>
+    </article>
+
+    
+    <article class="dream-tags">
+    
+      
+      
+      <a class="ui label" href="/tags/algo/" title="Algo">Algo</a>
+    
+      
+      
+      <a class="ui label" href="/tags/leetcode/" title="Leetcode">Leetcode</a>
+    
+      
+      
+      <a class="ui label" href="/tags/optimize/" title="Optimize">Optimize</a>
+    
+    </article>
+    
+  </div>
+</header>
+
+
+<div class="ui relaxed grid dream-grid dream-back">
+  
+  
+  
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article class="ui segment markdown-body">
+      <h3 class="ui header">About Us</h3>
+      <h1 id="team">Team</h1>
+<ul>
+<li><a href="https://github.com/khoahuynhdev">khoahuynhdev</a></li>
+<li><a href="https://github.com/giavudangle">giavudangle</a></li>
+<li><a href="https://github.com/longvox">longvox</a></li>
+</ul>
+
+    </article>
+  </div>
+  
+
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    <article class="ui segment">
+      <h3 class="ui header">Social Links</h3>
+      <nav class="ui secondary menu dream-menu dream-socials">
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <div class="item">
+    <a href="https://github.com/willdevforfood" target="_blank">
+      <i class="large github icon" title="GitHub"></i>
+    </a>
+  </div>
+  
+
+  
+
+  
+</nav>
+
+    </article>
+  </div>
+
+  <div class="sixteen wide mobile eight wide tablet four wide computer column dream-column">
+    
+  </div>
+
+  
+  
+</div>
+
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script>
+  window.defaultDark =  null 
+  window.backgroundDark =  null 
+  window.backgroundImageDark =  null 
+  window.darkNav =  null 
+  window.hasTwitterEmbed =  null 
+
+  if (window.hasTwitterEmbed) {
+    
+    window.twttr = (function (d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {}
+      if (d.getElementById(id)) return t
+      js = d.createElement(s)
+      js.id = id
+      js.src = 'https://platform.twitter.com/widgets.js'
+      fjs.parentNode.insertBefore(js, fjs)
+
+      t._e = []
+      t.ready = function (f) {
+        t._e.push(f)
+      }
+
+      return t
+    })(document, 'script', 'twitter-wjs')
+  }
+</script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/semantic.min.js"></script>
+<script src="/js/jquery.overlayScrollbars.min.js"></script>
+<script src="/js/header.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/theme.js"></script>
+
+    
+<script src="/js/html2canvas.min.js"></script>
+<script src="/js/post.js"></script>
+
+
+
+
+
+    
+    <div class="ui inverted segment" id="dream-search">
+  <div class="ui search">
+    <div class="ui transparent input">
+      <input class="prompt" type="text" placeholder="Search" />
+    </div>
+    <div class="results"></div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $.getJSON('https:\/\/willdevforfood.github.io/index.json', function (data) {
+      $('.ui.search').search({
+        source: data,
+        searchFields: ['title'],
+        showNoResults: true,
+      })
+    })
+  })
+</script>
+<script src="/js/search.js"></script>
+
+    
+
+    
+
+    
+  </body>
+</html>
