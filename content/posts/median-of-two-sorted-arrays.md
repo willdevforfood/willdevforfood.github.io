@@ -15,7 +15,7 @@ draft: false
 
 Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.
 
-Dịch: Cho 2 mảng đã được sắp xếp lần lượt là nums1 (kích thước m) và nums2 (kích thước n).Trả về kết quả là trung vị của 2 mảng đã được sắp xếp
+Cho 2 mảng đã được sắp xếp lần lượt là nums1 (kích thước m) và nums2 (kích thước n).Trả về kết quả là trung vị của 2 mảng đã được sắp xếp
 
 <!--more-->
 
@@ -34,7 +34,6 @@ Dịch: Cho 2 mảng đã được sắp xếp lần lượt là nums1 (kích th
 
 
 ## Ví dụ
-***
 Ví dụ 1 :
 ```
 Input: nums1 = [1,3], nums2 = [2]
@@ -50,7 +49,6 @@ Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
 ```
 
 ## Phân tích bài toán
-***
 Mới nhìn vào ,đọc lướt qua đề bài ta thấy vấn đề vô cùng dơn giản :v . Ta sẽ nghĩ kiểu : Merge 2 mảng lại thì độ dài của mảng sau khi merge là `m + n` .
 
 Ok thôi, như vậy sẽ có hai trường hợp để tính toán trung vị (median).Tạm gọi kết quả sau khi merge 2 mảng lại là `res`
@@ -68,7 +66,6 @@ Ta phải giải nó sao cho chỉ cắn trong phạm vi **O(log (m+n))** thôi 
 => Còn gì nữa đâu mà khóc với sầu khi suy nghĩ theo hướng merge 2 thằng lại =))). (Bỏ đi nha)
 
 ## Hướng tiếp cận
-***
 Đầu tiên phải đọc kĩ đề đã,đọc nhiều lần lên mới thông não được. Và leetcode cũng có phần `hint` để mình mò đó =)))
 
 Cùng nhìn xíu nào 😤 .
@@ -290,11 +287,9 @@ public class Solution {
 ## Runtime : Faster than 99.97% JS Submissions
 ![" Median Of Two Sorted Arrays"](/assets/runtime.png "Median Of Two Sorted Arrays")
 
-
 ## Kết luận
 Otoke :v Vậy là chúng ta đã giải được một bài tag <b><span style="color:red">HARD</span></b>.
 Qua bài này, chúng ta đã hình dung cách tiếp cận bài toán cũng như áp dụng Binary Search để tìm Median.
 Nếu bạn thấy bài viết có ít,đừng ngần ngại chia sẽ blog của tụi mình nhé.
 Cảm ơn đã đọc bài của mình . 😄
 Happy coding <3
-***
