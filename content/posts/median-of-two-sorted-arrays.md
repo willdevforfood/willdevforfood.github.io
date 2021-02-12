@@ -1,5 +1,6 @@
 ---
 title: Median Of Two Sorted Arrays
+date: "2021-02-12"
 author: Vu Dang
 # avatar: /img/author.jpg
 authorlink: https://github.com/giavudangle
