@@ -2,6 +2,7 @@
 title: Median Of Two Sorted Arrays
 date: "2021-02-12"
 author: Vu Dang
+description: "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays."
 # avatar: /img/author.jpg
 authorlink: https://github.com/giavudangle
 # cover: /img/cover.jpg
@@ -20,7 +21,7 @@ Cho 2 mảng đã được sắp xếp lần lượt là nums1 (kích thước m
 
 <!--more-->
 
-![" Median Of Two Sorted Arrays"](/assets/median.jpg "Median Of Two Sorted Arrays")
+!["Median Of Two Sorted Arrays"](/assets/median.jpg "Median Of Two Sorted Arrays")
 
 **Điều kiện :**
 Độ phức tạp toàn bộ quá trình runtime phải là phải là **O(log (m+n)).** (Khó ở phần optimize được **O(log (m+n))** như đề yêu cầu ).
