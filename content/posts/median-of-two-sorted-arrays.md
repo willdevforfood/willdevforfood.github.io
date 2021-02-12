@@ -32,7 +32,7 @@ Cho 2 mảng đã được sắp xếp lần lượt là nums1 (kích thước m
 - 0 <= m <= 1000
 - 0 <= n <= 1000
 - 1 <= m + n <= 2000
-- -10<sup>6</sup> <= nums1[i], nums2[i] <= 10<sup>6</sup>
+- -10^6 <= nums1[i], nums2[i] <= 10^6
 
 
 ## Ví dụ
@@ -51,7 +51,7 @@ Explanation: merged array = [1,2,3,4] and median is (2 + 3) / 2 = 2.5.
 ```
 
 ## Phân tích bài toán
-Mới nhìn vào ,đọc lướt qua đề bài ta thấy vấn đề vô cùng dơn giản :v . Ta sẽ nghĩ kiểu : Merge 2 mảng lại thì độ dài của mảng sau khi merge là `m + n` .
+Mới nhìn vào ,đọc lướt qua đề bài ta thấy vấn đề vô cùng đơn giản :v . Ta sẽ nghĩ kiểu : Merge 2 mảng lại thì độ dài của mảng sau khi merge là `m + n` .
 
 Ok thôi, như vậy sẽ có hai trường hợp để tính toán trung vị (median).Tạm gọi kết quả sau khi merge 2 mảng lại là `res`
 Vậy thì ta sẽ tính được :
