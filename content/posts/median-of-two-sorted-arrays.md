@@ -1,17 +1,17 @@
 ---
-title: Median Of Two Sorted Arrays
+title: How To Solve Median Of Two Sorted Arrays ?
 date: "2021-02-12"
 author: Vu Dang
 description: "Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays."
-# avatar: /img/author.jpg
+avatar: /assets/vudang.jpg
 authorlink: https://github.com/giavudangle
-# cover: /img/cover.jpg
+cover: /assets/leetcode.png
 categories:
   - Tutorial
 tags:
-  - Algo
-  - leetcode
-  - optimize
+  - Algorithm
+  - Leetcode
+  - Optimize
 draft: false
 ---
 
@@ -99,7 +99,7 @@ nếu như ta chia mảng và tìm được ngay được trung vị.
 Vậy ta phải làm sao ? Các bước như sau :
 ***
 1. Kiểm tra xem mảng nào có độ dài là nhỏ nhất trong 2 mảng.Ta sẽ áp dụng Binary Search trên mảng nhỏ hơn.
-2. <a href='https://www.geeksforgeeks.org/binary-search/'>Binary Search</a> của chúng ta sẽ có 2 pointers. Là ``start = 0`` và ``end = m`` (với m lầ độ dài của mảng nhỏ nhất trong 2 mảng).
+2. <a href='https://www.geeksforgeeks.org/binary-search/'>Binary Search</a> của chúng ta sẽ có 2 pointers. Là ``start = 0`` và ``end = m`` (với m là độ dài của mảng nhỏ nhất trong 2 mảng).
 3. Ta loop khi nào ``left <= right`` hay ``start <= end`` vẫn làm.
 4. Tiến hành tính chỉ số mid của A (partA) là điểm ở giữa của nó :
 ``(start + end) / 2``
