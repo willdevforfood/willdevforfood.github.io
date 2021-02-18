@@ -3,4 +3,4 @@
 
     
 
-[{"categories":["Tutorial"],"description":"\u003cp\u003eGiven two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\u003c/p\u003e\n\u003cp\u003eCho 2 mảng đã được sắp xếp lần lượt là nums1 (kích thước m) và nums2 (kích thước n).Trả về kết quả là trung vị của 2 mảng đã được sắp xếp\u003c/p\u003e","tags":["Algo","leetcode","optimize"],"title":"Median Of Two Sorted Arrays","url":"https://willdevforfood.github.io/posts/median-of-two-sorted-arrays/"}]
+[{"categories":["Tutorial"],"description":"\u003cp\u003eGiven two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.\u003c/p\u003e\n\u003cp\u003eCho 2 mảng đã được sắp xếp lần lượt là nums1 (kích thước m) và nums2 (kích thước n).Trả về kết quả là trung vị của 2 mảng đã được sắp xếp\u003c/p\u003e","tags":["Algorithm","Leetcode","Optimize"],"title":"How To Solve Median Of Two Sorted Arrays ?","url":"https://willdevforfood.github.io/posts/median-of-two-sorted-arrays/"}]
